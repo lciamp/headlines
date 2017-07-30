@@ -38,19 +38,23 @@ def home():
         currency_to = DEFAULTS['currency_to']
     rate, currencies = get_rate(currency_from, currency_to)
 
-    # making the cookie
+    # making the response object for the cookie
     response = make_response(render_template('home.html', 
-                                                articles=articles, 
-                                                weather=weather, 
-                                                currency_from=currency_from,
-                                                currency_to=currency_to,
-                                                rate=rate,
-                                                currencies=sorted(currencies)))
+                                            articles=articles, 
+                                            weather=weather, 
+                                            currency_from=currency_from,
+                                            currency_to=currency_to,
+                                            rate=rate,
+                                            currencies=sorted(currencies)))
+
+    # date for cookie to expire
     expires = datetime.datetime.now() + datetime.timedelta(days=365)
+    # set cookie
     response.set_cookie("publication", publication, expires=expires)
     response.set_cookie("city", city, expires=expires)
     response.set_cookie("currency_from", currency_from, expires=expires)
     response.set_cookie("currency_to", currency_to, expires=expires)
+    # return response object
     return response
     
 # function that gets the news
