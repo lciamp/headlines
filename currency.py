@@ -44,6 +44,7 @@ def home():
                                         currency_to=currency_to,
                                         rate=rate,
                                         currencies=sorted(currencies))
+    
 # function that gets the news
 def get_news(query):
     # check to see if the get is one of the rss feeds
@@ -72,6 +73,7 @@ def get_weather(query):
                     "city": parsed["name"],
                     "country": parsed["sys"]["country"]}
     return weather
+
 # function that gets currency
 def get_rate(frm, to):
     all_currency = urllib2.urlopen(CURRENCY_URL).read()
