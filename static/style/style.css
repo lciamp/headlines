@@ -1,0 +1,22 @@
+/* body            { font-family: 'Lato', sans-serif; background: #eee; } */
+html{
+  font-family: 'Lato', sans-serif;
+  background: white;
+}
+body {
+  background: lightgrey;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+#header {
+  padding-top: 5;
+  background: lightsteelblue;
+  padding: 0 auto;
+}
+#inner-header {
+  padding-left: 10;
+}
+#main {
+  padding-left: 10;
+}
