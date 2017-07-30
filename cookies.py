@@ -95,49 +95,10 @@ def get_value_with_fallback(key):
         return request.cookies.get(key)
     return DEFAULTS[key]
 
-
-
 # function that converts C to F
 def to_fahrenheit(tempature):
     return tempature * 1.8 + 32
 
-
-
-
-
-
 # run app    
 if __name__ == '__main__':
     app.run(port=5000, debug=True)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
